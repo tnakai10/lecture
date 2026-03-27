@@ -15,7 +15,7 @@
 
 ```
 app/practice/
-  step5-oop/
+  step5/
     index.php          ← エントリポイント（すべてのリクエストを受ける）
     Router.php         ← URL を解析してコントローラを呼ぶ
     PageController.php ← ページ表示のロジック

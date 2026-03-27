@@ -6,7 +6,7 @@ PHP のコードを含む `index.php` を作成する。
 
 ```
 app/practice/
-  step3-logic/
+  step3/
     index.php
 ```
 

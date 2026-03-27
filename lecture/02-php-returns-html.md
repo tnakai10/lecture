@@ -6,7 +6,7 @@
 
 ```
 app/practice/
-  step2-php/
+  step2/
     index.php
 ```
 
