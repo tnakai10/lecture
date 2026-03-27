@@ -1,0 +1,6 @@
+name: '零通り'
+type: theme
+description: '零通りのカスタムテーマ。'
+package: '零通り'
+core_version_requirement: '>=11.3'
+base theme: zerodoori_base

@@ -1,0 +1,22 @@
+uuid: abd5ebbc-474d-437c-bdf9-bf5be6a0b884
+langcode: ja
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - zerodoori
+_core:
+  default_config_hash: VfPFqqxfkomud5CO8DUijw85QIl9GIxh_nIxLOYESxg
+id: zerodoori_help
+theme: zerodoori
+region: sidebar_first
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: ヘルプ
+  label_display: '0'
+  provider: help
+visibility: {  }

@@ -1,0 +1,9 @@
+uuid: 1cddcaff-e84f-4f5f-94db-84e32d98ab7c
+langcode: ja
+status: true
+dependencies: {  }
+id: ja
+label: 日本語
+direction: ltr
+weight: 0
+locked: false

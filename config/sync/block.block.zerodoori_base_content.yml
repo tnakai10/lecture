@@ -1,0 +1,22 @@
+uuid: c9884451-91c1-4895-8a6c-943cf790c1b5
+langcode: ja
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - zerodoori_base
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: zerodoori_base_content
+theme: zerodoori_base
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: メインページコンテンツ
+  label_display: '0'
+  provider: system
+visibility: {  }

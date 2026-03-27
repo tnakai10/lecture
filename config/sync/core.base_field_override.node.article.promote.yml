@@ -1,0 +1,24 @@
+uuid: baca539c-87a3-4578-8959-a229c1e50555
+langcode: ja
+status: true
+dependencies:
+  config:
+    - node.type.article
+_core:
+  default_config_hash: RDuP1jcZGVZtdt1bNaMJ-KSp72XRKpYXwIK4_kOq6K8
+id: node.article.promote
+field_name: promote
+entity_type: node
+bundle: article
+label: フロントページへ掲載
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: オン
+  off_label: オフ
+field_type: boolean

@@ -1,0 +1,26 @@
+name: zerodoori_base
+type: theme
+'base theme': stable9
+version: 1.0.0
+libraries:
+  - zerodoori_base/base
+  - zerodoori_base/messages
+  - core/normalize
+libraries-extend:
+  user/drupal.user:
+    - zerodoori_base/user
+  core/drupal.dropbutton:
+    - zerodoori_base/dropbutton
+  core/drupal.dialog:
+    - zerodoori_base/dialog
+  file/drupal.file:
+    - zerodoori_base/file
+  core/drupal.item-list:
+    - zerodoori_base/item-list
+  core/drupal.progress:
+    - zerodoori_base/progress
+  core/drupal.tablesort:
+    - zerodoori_base/drupal.tablesort
+description: ''
+core_version_requirement: ^11
+generator: 'starterkit_theme:11.3.5'

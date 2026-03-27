@@ -1,0 +1,22 @@
+uuid: e5b406a0-a723-4aaf-bdd6-ed01a88002f1
+langcode: ja
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - zerodoori
+_core:
+  default_config_hash: VhBzWb7lMRtIOg9G7VSw_0uopi-7zXeHq4vXqqV1HFE
+id: zerodoori_breadcrumbs
+theme: zerodoori
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: パンくず
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,25 @@
+uuid: 9ae41f6f-2f99-4c03-8334-91e8a34f2195
+langcode: ja
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - zerodoori_base
+_core:
+  default_config_hash: '-OAAZDw1OR_UyAEPEKX0Hu4LaZD149vW9PmMnIC-v0o'
+id: zerodoori_base_site_branding
+theme: zerodoori_base
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: サイトブランディング
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

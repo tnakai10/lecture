@@ -1,0 +1,27 @@
+uuid: 2d7b539d-1fb8-4a79-a2f0-8578186b44f6
+langcode: ja
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - zerodoori
+_core:
+  default_config_hash: gmxYWWHmgbe0Pnv8y48ZLSLH5mEHejOjAP6RLxUfdzU
+id: zerodoori_account_menu
+theme: zerodoori
+region: secondary_menu
+weight: -4
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: ユーザーアカウントメニュー
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

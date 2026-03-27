@@ -1,0 +1,23 @@
+uuid: cfdaeffe-5fe2-4585-ae33-2c6d3e69f77c
+langcode: ja
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - zerodoori
+_core:
+  default_config_hash: _nZjxxdypO6xrOAJkCYD81v0L7wh2zbCAVO7_C-UKIc
+id: zerodoori_search_form_narrow
+theme: zerodoori
+region: primary_menu
+weight: -4
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (narrow)'
+  label_display: '0'
+  provider: search
+  page_id: null
+visibility: {  }

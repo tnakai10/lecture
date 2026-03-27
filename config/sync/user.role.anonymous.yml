@@ -1,0 +1,22 @@
+uuid: a35f50be-d287-4ac3-8da9-9452bc838ab8
+langcode: ja
+status: true
+dependencies:
+  config:
+    - filter.format.restricted_html
+  module:
+    - comment
+    - filter
+    - search
+    - system
+_core:
+  default_config_hash: xLG41YbRo2NP-0SgRNTkMzLEuaeibanGXgUTbdIcIIg
+id: anonymous
+label: 匿名ユーザー
+weight: 0
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'search content'
+  - 'use text format restricted_html'

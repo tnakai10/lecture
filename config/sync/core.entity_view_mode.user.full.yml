@@ -1,0 +1,13 @@
+uuid: 314147a4-120b-4f3c-98ae-4248896ebfab
+langcode: ja
+status: false
+dependencies:
+  module:
+    - user
+_core:
+  default_config_hash: ZbXunWS_xAvMZXFfinyvClDAb_RCVLt7gAzE3v16E-Q
+id: user.full
+label: ユーザーアカウント
+description: ''
+targetEntityType: user
+cache: true

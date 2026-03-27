@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<ruleset name="Studio Umi coding standatd for Drupal development">
+  <description>PHP CodeSniffer configuration for Studio Umi Drupal development.</description>
+
+  <!-- 対象のディレクトリ -->
+  <file>app/themes/custom/</file>
+  <file>app/modules/custom/</file>
+
+  <!-- オプション -->
+  <arg name="cache" value=".cache/phpcs"/>
+  <arg name="extensions" value="php,module,inc,install,test,profile,theme,info,txt,md,yml"/>
+  <arg name="parallel" value="8"/>
+
+  <!-- Drupal コアのバージョンを指定 -->
+  <config name="drupal_core_version" value="10"/>
+
+  <!-- Coder から Drupal と DrupalPractice を継承 -->
+  <rule ref="Drupal" />
+  <rule ref="DrupalPractice"/>
+
+  <!-- メソッド名はロアキャメルケースにする -->
+  <rule ref="Drupal.NamingConventions.ValidFunctionName.ScopeNotCamelCaps">
+    <!-- PHPUnit を使ったテストではメソッド名を日本語で書く場合があるので、tests
+      ディレクトリ内の違反は無視する-->
+    <exclude-pattern>*/tests/*</exclude-pattern>
+  </rule>
+
+  <!-- パラメーターのコメントは大文字から始める -->
+  <rule ref="Drupal.Commenting.FunctionComment.ParamCommentNotCapital">
+    <!-- 日本語でコメントを記載するため無視する -->
+    <severity>0</severity>
+  </rule>
+
+  <!-- Doc コメントのショートディスクリプションは大文字から始める -->
+  <rule ref="Drupal.Commenting.DocComment.ShortNotCapital">
+    <!-- 日本語でコメントを記載するため無視する -->
+    <severity>0</severity>
+  </rule>
+
+  <!-- #options の値は翻訳するため t() 関数を通す -->
+  <rule ref="DrupalPractice.General.OptionsT.TforValue">
+    <!-- 日本語だけのサイトなので無視する -->
+    <severity>0</severity>
+  </rule>
+
+  <!-- #description の値は翻訳するため t() 関数を通す -->
+  <rule ref="DrupalPractice.General.DescriptionT.DescriptionT">
+    <!-- 日本語だけのサイトなので無視する -->
+    <severity>0</severity>
+  </rule>
+
+  <!-- 変数展開以外のダブルクォーテーションは許可しない -->
+  <rule ref="Squiz.Strings.DoubleQuoteUsage.NotRequired">
+    <exclude name="Squiz.Strings.DoubleQuoteUsage.ContainsVar"/>
+  </rule>
+</ruleset>

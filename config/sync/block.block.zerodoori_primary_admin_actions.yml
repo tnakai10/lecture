@@ -1,0 +1,20 @@
+uuid: 18087bd6-aed1-4c81-8dcc-93f39dac8e25
+langcode: ja
+status: true
+dependencies:
+  theme:
+    - zerodoori
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: zerodoori_primary_admin_actions
+theme: zerodoori
+region: highlighted
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: プライマリ管理アクション
+  label_display: '0'
+  provider: core
+visibility: {  }

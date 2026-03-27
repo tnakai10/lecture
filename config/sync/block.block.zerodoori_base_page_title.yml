@@ -1,0 +1,20 @@
+uuid: 044ccd47-66ad-49f1-97f9-0c20e8817d1e
+langcode: ja
+status: true
+dependencies:
+  theme:
+    - zerodoori_base
+_core:
+  default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
+id: zerodoori_base_page_title
+theme: zerodoori_base
+region: sidebar_first
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: ページのタイトル
+  label_display: '0'
+  provider: core
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: 701f193b-3cba-4892-bd65-2535dd858b23
+langcode: ja
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - zerodoori_base
+_core:
+  default_config_hash: BZ5tpW7H8X4PVGRm3MImTIHd2tN0eF7zOtp4SpRYUA0
+id: zerodoori_base_messages
+theme: zerodoori_base
+region: highlighted
+weight: -5
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: ステータスメッセージ
+  label_display: '0'
+  provider: system
+visibility: {  }

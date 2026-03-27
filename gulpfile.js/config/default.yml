@@ -1,0 +1,17 @@
+# @file
+# Gulp.js configuration file.
+
+# ウェブルートディレクトリ. composer.json の drupal-scaffold の設定と合わせる.
+webRoot: app
+
+# @see https://browsersync.io/docs/options
+browsersync:
+  logSnippet: false
+  ui: false
+
+# @see https://www.npmjs.com/package/gulp-stylelint
+# @see https://stylelint.io/user-guide/usage/node-api#options
+stylelint:
+  reporters:
+    - formatter: string
+      console: true
