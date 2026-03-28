@@ -4,20 +4,34 @@
 
 Drupal には `index.php` が 1 つしかない。`/node/1` にアクセスしても、`/user/login` にアクセスしても、すべて `index.php` が処理する。
 
-これは Web サーバーの「リライトルール」という設定で実現されている。Apache の場合は `.htaccess` に以下のようなルールがある。
+これは Web サーバーの設定で実現されている。この DDEV 環境の Nginx 設定（`/etc/nginx/sites-enabled/nginx-site.conf`）には以下のようなルールがある。
 
-```apache
-# ファイルやディレクトリが実在しないリクエストは index.php に転送
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ index.php [L]
+```nginx
+location / {
+    try_files $uri $uri/ /index.php?$query_string;
+}
 ```
+
+`try_files` は Nginx のディレクティブで、以下の順番でファイルを探す:
+
+1. `$uri` : リクエストされた URL に一致するファイルがあればそれを返す
+2. `$uri/` : ディレクトリがあればその中の index ファイルを返す
+3. `/index.php?$query_string` : どちらも見つからなければ `index.php` に転送する
 
 これにより:
 
 - `/about.html` というファイルが実在すればそのファイルを返す
 - `/node/1` というファイルは存在しないので `index.php` に転送される
 - `index.php`（Drupal）が URL を解析して適切なコンテンツを返す
+
+このパターンを「フロントコントローラパターン」と呼ぶ。すべてのリクエストが `index.php` という 1 つの入口を通るため、認証・ルーティング・ログなどの共通処理を一元管理できる。
+
+なお、practice ファイル（step1〜7）は `try_files` の `$uri` で実ファイルとして見つかるため、Drupal の `index.php` を経由せず各ファイルが直接実行される。
+
+```text
+Drupal:    /node/1           → Nginx → ファイルなし → index.php → Drupal カーネル → HTML
+practice:  /practice/step3/  → Nginx → ファイルあり → step3/index.php → HTML
+```
 
 ## Drupal のキャッシュ
 
