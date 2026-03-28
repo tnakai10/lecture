@@ -16,58 +16,54 @@
 ```
 app/practice/
   step5/
-    index.php          ← エントリポイント（すべてのリクエストを受ける）
-    Router.php         ← URL を解析してコントローラを呼ぶ
-    PageController.php ← ページ表示のロジック
-    Database.php       ← データベース操作
+    index.php              ← エントリポイント（すべてのリクエストを受ける）
+    Router.php             ← URL を解析してコントローラを呼ぶ
+    NodeController.php     ← ノード表示のロジック
+    Database.php           ← データベース操作
     templates/
-      page.php         ← HTML テンプレート
+      node-list.php        ← HTML テンプレート
 ```
 
 ```php
 // index.php（エントリポイント）
 <?php
-require_once 'Router.php';
-require_once 'PageController.php';
-require_once 'Database.php';
+require_once __DIR__ . '/Database.php';
+require_once __DIR__ . '/Router.php';
+require_once __DIR__ . '/NodeController.php';
 
-$router = new Router();
-$router->route($_SERVER['REQUEST_URI']);
+$db = new Database();
+$router = new Router($db);
+$router->route();
 ```
 
 ```php
-// PageController.php
+// NodeController.php
 <?php
-class PageController {
+class NodeController {
     private Database $db;
 
     public function __construct(Database $db) {
         $this->db = $db;
     }
 
-    public function show(string $slug): void {
-        $page = $this->db->getPage($slug);
-        $comments = $this->db->getComments($slug);
+    public function index(): void {
+        $nodes = $this->db->getNodes();
 
         // テンプレートに変数を渡して描画
-        include 'templates/page.php';
+        include __DIR__ . '/templates/node-list.php';
     }
 }
 ```
 
 ```php
-// templates/page.php（テンプレート）
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title><?php echo htmlspecialchars($page['title']); ?></title>
-</head>
-<body>
-  <h1><?php echo htmlspecialchars($page['title']); ?></h1>
-  <div><?php echo $page['body']; ?></div>
-</body>
-</html>
+// templates/node-list.php（テンプレート、抜粋）
+<?php foreach ($nodes as $node): ?>
+  <tr>
+    <td><?php echo htmlspecialchars($node['nid']); ?></td>
+    <td><?php echo htmlspecialchars($node['title']); ?></td>
+    <td><?php echo htmlspecialchars($node['type']); ?></td>
+  </tr>
+<?php endforeach; ?>
 ```
 
 ## ポイント
