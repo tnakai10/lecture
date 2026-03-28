@@ -11,9 +11,10 @@
 - [ステップ 4: 1 つのファイルに何でも書けてしまう問題](04-single-file-problem.md)
 - [ステップ 5: OOP（オブジェクト指向）で構造化する](05-oop.md)
 - [ステップ 6: Twig テンプレートの仕組み](06-twig.md)
-- [ステップ 7: Drupal がページを返すまでの全体像](07-drupal-overview.md)
-- [まとめ: 各ステップの繋がり](08-summary.md)
-- [補足: 理解を深めるための追加トピック](09-appendix.md)
+- [ステップ 7: PHP テンプレートを Twig に置き換える](07-twig-practice.md)
+- [ステップ 8: Drupal がページを返すまでの全体像](08-drupal-overview.md)
+- [まとめ: 各ステップの繋がり](09-summary.md)
+- [補足: 理解を深めるための追加トピック](10-appendix.md)
 
 ## 前提知識の確認
 

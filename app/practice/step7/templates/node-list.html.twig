@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Step 7: Twig テンプレート</title>
+  <style>
+    body { font-family: sans-serif; margin: 2em; }
+    table { border-collapse: collapse; margin-top: 1em; }
+    th, td { border: 1px solid #ccc; padding: 8px 12px; text-align: left; }
+    th { background: #f5f5f5; }
+    .delete-link { color: red; }
+  </style>
+</head>
+<body>
+  <h1>Step 7: Twig テンプレートを使ったノード管理ページ</h1>
+
+  <h2>Drupal ノード一覧</h2>
+
+  {% if nodes is empty %}
+    <p>ノードがありません。</p>
+  {% else %}
+    <table>
+      <tr>
+        <th>NID</th>
+        <th>タイトル</th>
+        <th>タイプ</th>
+        <th>操作</th>
+      </tr>
+      {% for node in nodes %}
+        <tr>
+          <td>{{ node.nid }}</td>
+          <td>{{ node.title }}</td>
+          <td>{{ node.type }}</td>
+          <td><a href="?delete={{ node.nid }}" class="delete-link" onclick="return confirm('本当に削除しますか？')">削除</a></td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% endif %}
+
+  <h2>step5 との違い</h2>
+  <ul>
+    <li>テンプレートが <code>.php</code> から <code>.html.twig</code> に変わった</li>
+    <li><code>{{ "{{ }}" }}</code> で変数を出力（自動エスケープ）</li>
+    <li><code>{{ "{% %}" }}</code> で制御構文（if、for）</li>
+    <li>テンプレート内で PHP コードを実行できない（安全）</li>
+    <li>コンパイル済み PHP が <code>cache/</code> ディレクトリに保存される</li>
+  </ul>
+</body>
+</html>

@@ -75,6 +75,29 @@ if ($context["label"]) {
 yield "</div>";
 ```
 
+## 補足: yield とは
+
+コンパイル後の PHP に登場する `yield` は、値を少しずつ返すための PHP の構文。通常の `return` は値を 1 つ返して関数が終了するが、`yield` は値を返した後も関数の実行が続く。
+
+```php
+// return: 一度に全部返す
+function render(): string {
+    return "<h1>タイトル</h1><p>本文</p>";
+}
+
+// yield: パーツごとに返す
+function render(): Generator {
+    yield "<h1>タイトル</h1>";
+    yield "<p>本文</p>";
+}
+```
+
+Twig が `yield` を使うのは、HTML 全体を一度にメモリに溜めるのではなく、パーツごとに出力できるためメモリ効率が良いから。
+
+## 補足: コンパイル済みファイルの保存場所
+
+コンパイルされた PHP ファイルは `sites/default/files/php/twig/` に保存されている。`step6/` のデモページにアクセスすると、実際のキャッシュファイルの中身を確認できる。
+
 ## なぜ PHP に変換するのか
 
 - 2 回目以降のアクセスではコンパイル済み PHP を直接実行するため高速
