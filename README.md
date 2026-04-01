@@ -5,6 +5,36 @@
 
 composer create-projectによってDrupal10.xの初期構築を行うパッケージ。
 
+## 講義資料
+
+本プロジェクトには Drupal の仕組みを段階的に学ぶための講義資料が含まれています。静的 HTML の知識がある人向けに、Drupal がどのようにページを表示しているかを理解するための資料です。
+
+資料は [app/lecture/](app/lecture/) ディレクトリに配置されています。DDEV 環境を起動している場合は、ブラウザから整形された形式で閲覧できます。
+
+```
+https://drupal-project.ddev.site/lecture/
+```
+
+### 目次
+
+1. [前提知識の確認](app/lecture/00-index.md)
+2. [静的 HTML が返る仕組みを確認する](app/lecture/01-static-html.md)
+3. [PHP ファイルが HTML を返す仕組みを確認する](app/lecture/02-php-returns-html.md)
+4. [PHP には様々なロジックが書けることを確認する](app/lecture/03-php-logic.md)
+5. [1 つのファイルに何でも書けてしまう問題](app/lecture/04-single-file-problem.md)
+6. [OOP（オブジェクト指向）で構造化する](app/lecture/05-oop.md)
+7. [Twig テンプレートの仕組み](app/lecture/06-twig.md)
+8. [PHP テンプレートを Twig に置き換える](app/lecture/07-twig-practice.md)
+9. [Drupal がページを返すまでの全体像](app/lecture/08-drupal-overview.md)
+10. [まとめ: 各ステップの繋がり](app/lecture/09-summary.md)
+11. [補足: 理解を深めるための追加トピック](app/lecture/10-appendix.md)
+
+### 講義の進め方
+
+1. [00-index.md](app/lecture/00-index.md) から順番に読み進めてください
+2. 各ステップには講義資料と実習が含まれています
+3. DDEV 環境を起動した状態で実習を行うことを推奨します
+
 ## 使用方法
 
 最初に [composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx) をインストールしてください。
