@@ -33,6 +33,29 @@ Drupal:    /node/1           → Nginx → ファイルなし → index.php → 
 practice:  /practice/step3/  → Nginx → ファイルあり → step3/index.php → HTML
 ```
 
+## Drupal カーネル
+
+ステップ 8 の全体像で「カーネル起動」と書いた部分について補足する。
+
+Drupal は Symfony の `HttpKernel` をベースにしたカーネル（`DrupalKernel`）を持っている。`index.php` が最初に行うのは、このカーネルの起動である。
+
+```php
+// index.php（簡略化）
+$kernel = new DrupalKernel('prod', $autoloader);
+$response = $kernel->handle($request);
+$response->send();
+```
+
+カーネルは以下の処理を順番に行う:
+
+1. サービスコンテナの構築（データベース接続、ログ、キャッシュなどの依存オブジェクトを登録）
+2. ルーティング（URL からコントローラを特定）
+3. コントローラの実行（レンダー配列の生成）
+4. レンダリング（レンダー配列 → Twig テンプレート → HTML）
+5. レスポンスの返却
+
+step5 では `Router` → `Controller` → `Template` という流れを自前で実装したが、Drupal カーネルはこれをフレームワークとして提供している。セキュリティチェック、キャッシュ、イベント処理なども、このカーネルの中で統一的に管理される。
+
 ## Drupal のキャッシュ
 
 Drupal は処理の各段階でキャッシュを活用している。

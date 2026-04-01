@@ -6,15 +6,19 @@
 
 ```
 app/practice/
-  step7/
-    index.php              ← エントリポイント（Twig の autoload を追加）
-    Router.php             ← step5 と同じ
-    NodeController.php     ← Twig を使ってテンプレートを描画
-    Database.php           ← step5 と同じ
-    templates/
-      node-list.html.twig  ← Twig テンプレート（PHP テンプレートから置換）
-    cache/                 ← コンパイル済み PHP が自動生成される
+└── step7/
+    ├── index.php              ← エントリポイント（Twig の autoload を追加）
+    ├── Router.php             ← step5 と同じ
+    ├── NodeController.php     ← Twig を使ってテンプレートを描画
+    ├── Database.php           ← step5 と同じ
+    ├── templates/
+    │   └── node-list.html.twig  ← Twig テンプレート（PHP テンプレートから置換）
+    └── cache/                 ← コンパイル済み PHP が自動生成される
 ```
+
+## 確認方法
+
+ブラウザで <https://drupal-project.ddev.site/practice/step7/> にアクセスし、step5 と同じノード一覧が表示されることを確認する。
 
 ## step5 との比較
 

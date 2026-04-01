@@ -15,13 +15,13 @@
 
 ```
 app/practice/
-  step5/
-    index.php              ← エントリポイント（すべてのリクエストを受ける）
-    Router.php             ← URL を解析してコントローラを呼ぶ
-    NodeController.php     ← ノード表示のロジック
-    Database.php           ← データベース操作
-    templates/
-      node-list.php        ← HTML テンプレート
+└── step5/
+    ├── index.php              ← エントリポイント（すべてのリクエストを受ける）
+    ├── Router.php             ← URL を解析してコントローラを呼ぶ
+    ├── NodeController.php     ← ノード表示のロジック
+    ├── Database.php           ← データベース操作
+    └── templates/
+        └── node-list.php      ← HTML テンプレート
 ```
 
 ```php
@@ -65,6 +65,10 @@ class NodeController {
   </tr>
 <?php endforeach; ?>
 ```
+
+## 確認方法
+
+ブラウザで <https://drupal-project.ddev.site/practice/step5/> にアクセスし、step4 と同じノード一覧が表示されることを確認する。
 
 ## ポイント
 

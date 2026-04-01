@@ -6,8 +6,8 @@
 
 ```
 app/practice/
-  step1/
-    index.html
+└── step1/
+    └── index.html
 ```
 
 ```html
@@ -26,10 +26,8 @@ app/practice/
 
 ## 確認方法
 
-DDEV 環境であれば、Web サーバーのドキュメントルート配下にファイルを置き、ブラウザでアクセスして表示を確認する。
-
-- `https://<サイト>.ddev.site/practice/step1/index.html`
-- `https://<サイト>.ddev.site/practice/step1/` でも同じ結果になる
+- <https://drupal-project.ddev.site/practice/step1/index.html> にアクセスし、HTML が表示されることを確認する
+- <https://drupal-project.ddev.site/practice/step1/> でも同じ結果になることを確認する
 
 ### なぜディレクトリ名だけでアクセスできるのか
 

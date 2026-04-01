@@ -6,11 +6,13 @@
 
 ```
 app/practice/
-  step4/
-    index.php
+└── step4/
+    └── index.php
 ```
 
-ブラウザで `step4/` にアクセスすると、Drupal のノード一覧が表示され、削除ボタンでノードを削除できる。
+ブラウザで <https://drupal-project.ddev.site/practice/step4/> にアクセスすると、Drupal のノード一覧が表示され、削除ボタンでノードを削除できる。
+
+ノードが存在しない場合は、先に Drupal の管理画面（<https://drupal-project.ddev.site/node/add>）からコンテンツを作成しておくこと。
 
 ```php
 <?php
@@ -84,17 +86,15 @@ $db->exec("DELETE FROM node WHERE nid = $nid");
 
 `$nid` は URL のパラメータ（`$_GET['delete']`）から取得した値で、ユーザーが自由に書き換えられる。この値がそのまま SQL 文に埋め込まれている。
 
-通常のアクセス:
+通常のアクセス（`https://...practice/step4/?delete=1`）:
 
 ```sql
--- ?delete=1 の場合
 DELETE FROM node WHERE nid = 1
 ```
 
-攻撃者がこのようにアクセスすると:
+攻撃者がこのようにアクセスすると（`https://...practice/step4/?delete=1 OR 1=1`）:
 
 ```sql
--- ?delete=1 OR 1=1 の場合
 DELETE FROM node WHERE nid = 1 OR 1=1
 ```
 
@@ -112,7 +112,7 @@ $stmt->execute([$nid]);
 
 1 ファイルに処理を詰め込むと、こうしたセキュリティ上のミスに気づきにくい。
 
-## 補足: 削除するときに行われるべきこと
+## Drupal が正規の削除で行っていること
 
 step4 では `DELETE FROM node WHERE nid = $nid` の 1 行で済ませているが、Drupal が正規の手順でノードを削除する場合、以下のような処理が行われる。
 
