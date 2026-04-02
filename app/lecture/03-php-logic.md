@@ -41,7 +41,9 @@ app/examples/
 ## 確認方法
 
 - <https://drupal-project.ddev.site/examples/step3/> にアクセスする
-- 開発者ツール（F12）のネットワークタブでレスポンスを確認し、PHP のコード（`<?php ... ?>`）が消えて実行結果だけが HTML として返っていることを確認する
+- HTML が表示されていることを確認する
+  - 開発者ツール（F12）の要素タブで、PHP のコード（`<?php ... ?>`）が消えていることを確認する
+  - ネットワークタブ > `step3` > Headers > Response headers で Content-Type が `text/html` となっていることを確認する
 - リロードすると時刻が変わることも確認する
 
 ## ポイント
