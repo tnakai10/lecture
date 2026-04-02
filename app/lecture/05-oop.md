@@ -66,6 +66,8 @@ class NodeController {
 <?php endforeach; ?>
 ```
 
+> このステップのコードは、OOP による構造化の考え方をわかりやすく示すことを目的としています。セキュリティ対策（SQL インジェクション防止、CSRF 対策など）やエラーハンドリングといった実運用に必要な処理はすべて省略しています。
+
 ## 確認方法
 
 ブラウザで <https://drupal-project.ddev.site/examples/step5/> にアクセスし、step4 と同じノード一覧が表示されることを確認する。
