@@ -5,7 +5,7 @@
 ステップ 5 の OOP 構造はそのままに、PHP テンプレートを Twig テンプレートに置き換える。
 
 ```
-app/practice/
+app/examples/
 └── step7/
     ├── index.php              ← エントリポイント（Twig の autoload を追加）
     ├── Router.php             ← step5 と同じ
@@ -18,7 +18,7 @@ app/practice/
 
 ## 確認方法
 
-ブラウザで <https://drupal-project.ddev.site/practice/step7/> にアクセスし、step5 と同じノード一覧が表示されることを確認する。
+ブラウザで <https://drupal-project.ddev.site/examples/step7/> にアクセスし、step5 と同じノード一覧が表示されることを確認する。
 
 ## step5 との比較
 

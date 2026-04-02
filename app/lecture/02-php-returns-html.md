@@ -5,7 +5,7 @@
 `index.php` を作成し、ブラウザからアクセスする。
 
 ```
-app/practice/
+app/examples/
 └── step2/
     └── index.php
 ```
@@ -26,7 +26,7 @@ app/practice/
 
 ## 確認方法
 
-- <https://drupal-project.ddev.site/practice/step2/> にアクセスし、ステップ 1 と同じように HTML が表示されることを確認する
+- <https://drupal-project.ddev.site/examples/step2/> にアクセスし、ステップ 1 と同じように HTML が表示されることを確認する
 - 開発者ツール（F12）のネットワークタブを開き、レスポンスヘッダーに `Content-Type: text/html` が含まれていることを確認する
 - 拡張子が `.php` であっても、ブラウザに返されるのは普通の HTML であることがわかる
 

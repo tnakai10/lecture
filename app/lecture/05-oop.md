@@ -14,7 +14,7 @@
 これを PHP のクラスとして整理すると:
 
 ```
-app/practice/
+app/examples/
 └── step5/
     ├── index.php              ← エントリポイント（すべてのリクエストを受ける）
     ├── Router.php             ← URL を解析してコントローラを呼ぶ
@@ -68,7 +68,7 @@ class NodeController {
 
 ## 確認方法
 
-ブラウザで <https://drupal-project.ddev.site/practice/step5/> にアクセスし、step4 と同じノード一覧が表示されることを確認する。
+ブラウザで <https://drupal-project.ddev.site/examples/step5/> にアクセスし、step4 と同じノード一覧が表示されることを確認する。
 
 ## ポイント
 

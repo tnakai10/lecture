@@ -5,7 +5,7 @@
 PHP のコードを含む `index.php` を作成する。
 
 ```
-app/practice/
+app/examples/
 └── step3/
     └── index.php
 ```
@@ -40,7 +40,7 @@ app/practice/
 
 ## 確認方法
 
-- <https://drupal-project.ddev.site/practice/step3/> にアクセスする
+- <https://drupal-project.ddev.site/examples/step3/> にアクセスする
 - 開発者ツール（F12）のネットワークタブでレスポンスを確認し、PHP のコード（`<?php ... ?>`）が消えて実行結果だけが HTML として返っていることを確認する
 - リロードすると時刻が変わることも確認する
 

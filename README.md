@@ -10,20 +10,20 @@
 ddev start
 ```
 
+Drupal のサイトインストールを行うには、以下のコマンドを実行します。
+
+```bash
+ddev drush site:install --account-name=admin --account-pass=admin --locale=ja -y
+```
+
 ## 講義資料
 
-資料は [app/lecture/](app/lecture/) ディレクトリに配置されています。DDEV 環境を起動している場合は、ブラウザから整形された形式で閲覧できます。
+資料は [app/lecture/](app/lecture/) ディレクトリに配置されています。
+DDEV 環境を起動している場合は、ブラウザから整形された形式で閲覧できます。
 
-```
 https://drupal-project.ddev.site/lecture/
-```
 
-### 講義の進め方
+## コード例
 
-1. [00-index.md](app/lecture/00-index.md) から順番に読み進めてください
-2. 各ステップには講義資料と実習が含まれています
-3. DDEV 環境を起動した状態で実習を行うことを推奨します
-
-## 実習ファイル
-
-実習用のサンプルコードは [app/practice/](app/practice/) ディレクトリに配置されています。各ステップは講義資料と対応しています。
+講義で使用するサンプルコードは [app/examples/](app/examples/) ディレクトリに配置されています。
+各ステップは講義資料と対応しています。

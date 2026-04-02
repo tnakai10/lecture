@@ -26,11 +26,11 @@ location / {
 
 このパターンを「フロントコントローラパターン」と呼ぶ。すべてのリクエストが `index.php` という 1 つの入口を通るため、認証・ルーティング・ログなどの共通処理を一元管理できる。
 
-なお、practice ファイル（step1〜7）は `try_files` の `$uri` で実ファイルとして見つかるため、Drupal の `index.php` を経由せず各ファイルが直接実行される。
+なお、examples ファイル（step1〜7）は `try_files` の `$uri` で実ファイルとして見つかるため、Drupal の `index.php` を経由せず各ファイルが直接実行される。
 
 ```text
 Drupal:    /node/1           → Nginx → ファイルなし → index.php → Drupal カーネル → HTML
-practice:  /practice/step3/  → Nginx → ファイルあり → step3/index.php → HTML
+examples:  /examples/step3/  → Nginx → ファイルあり → step3/index.php → HTML
 ```
 
 ## Drupal カーネル

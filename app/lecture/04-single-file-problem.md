@@ -5,12 +5,12 @@
 「Drupal のノードを管理するページを自前で作った」という想定で、データベース接続、ロジック、HTML 出力をすべて 1 ファイルに詰め込んだ例を確認する。
 
 ```
-app/practice/
+app/examples/
 └── step4/
     └── index.php
 ```
 
-ブラウザで <https://drupal-project.ddev.site/practice/step4/> にアクセスすると、Drupal のノード一覧が表示され、削除ボタンでノードを削除できる。
+ブラウザで <https://drupal-project.ddev.site/examples/step4/> にアクセスすると、Drupal のノード一覧が表示され、削除ボタンでノードを削除できる。
 
 ノードが存在しない場合は、先に Drupal の管理画面（<https://drupal-project.ddev.site/node/add>）からコンテンツを作成しておくこと。
 
@@ -86,13 +86,13 @@ $db->exec("DELETE FROM node WHERE nid = $nid");
 
 `$nid` は URL のパラメータ（`$_GET['delete']`）から取得した値で、ユーザーが自由に書き換えられる。この値がそのまま SQL 文に埋め込まれている。
 
-通常のアクセス（`https://...practice/step4/?delete=1`）:
+通常のアクセス（`https://...examples/step4/?delete=1`）:
 
 ```sql
 DELETE FROM node WHERE nid = 1
 ```
 
-攻撃者がこのようにアクセスすると（`https://...practice/step4/?delete=1 OR 1=1`）:
+攻撃者がこのようにアクセスすると（`https://...examples/step4/?delete=1 OR 1=1`）:
 
 ```sql
 DELETE FROM node WHERE nid = 1 OR 1=1
